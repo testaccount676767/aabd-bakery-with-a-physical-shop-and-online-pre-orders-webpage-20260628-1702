@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AABD Bakery - Artisan Sourdough & Pastries in Singapore CBD</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --warm-beige: #f7ebe1;
+    --warm-brown: #6b3e26;
+    --dark-brown: #422911;
+    --accent-red: #d94e3f;
+    --accent-gold: #d9a24e;
+    --shadow-dark: rgba(0, 0, 0, 0.15);
+    --font-sans: 'Open Sans', sans-serif;
+    --font-alt: 'Montserrat', sans-serif;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0; background: var(--warm-beige); color: var(--dark-brown);
+    font-family: var(--font-sans); line-height: 1.55;
+    scroll-behavior: smooth;
+  }
+  header {
+    background: var(--warm-brown);
+    color: var(--warm-beige);
+    padding: 1rem 1.5rem;
+    position: sticky;
+    top: 0; z-index: 900;
+    box-shadow: 0 2px 6px var(--shadow-dark);
+  }
+  header nav {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  header h1 {
+    font-family: var(--font-alt);
+    font-weight: 700;
+    font-size: 1.6rem;
+    letter-spacing: 1.4px;
+  }
+  nav ul {
+    list-style: none;
+    display: flex; gap: 1.3rem;
+    margin: 0; padding: 0;
+  }
+  nav a {
+    text-decoration: none;
+    color: var(--warm-beige);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  nav a:hover,
+  nav a:focus {
+    color: var(--accent-red);
+    outline-offset: 3px;
+  }
+  main {
+    max-width: 1100px;
+    margin: 1.5rem auto 3rem;
+    padding: 0 1rem;
+  }
+  section {
+    margin-bottom: 4rem;
+  }
+  h2.section-title {
+    font-family: var(--font-alt);
+    font-size: 2rem;
+    color: var(--warm-brown);
+    border-bottom: 4px solid var(--accent-red);
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+  /* Home Section */
+  #home {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+  }
+  #home-text {
+    flex: 1 1 380px;
+  }
+  #home-text h2 {
+    font-family: var(--font-alt);
+    font-weight: 700;
+    font-size: 2.8rem;
+    color: var(--dark-brown);
+    margin-bottom: 0.5rem;
+  }
+  #home-text p {
+    font-size: 1.15rem;
+    color: var(--warm-brown);
+    margin-bottom: 1.5rem;
+  }
+  #home-text button {
+    background: var(--accent-red);
+    border: none;
+    color: var(--warm-beige);
+    font-weight: 700;
+    padding: 0.75rem 1.75rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    box-shadow: 0 5px 10px rgba(217,78,63,0.45);
+    transition: background 0.3s ease;
+  }
+  #home-text button:hover,
+  #home-text button:focus {
+    background: #b93c30;
+    outline-offset: 3px;
+  }
+  #home-img {
+    flex: 1 1 320px;
+    text-align: center;
+  }
+  #home-img img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px var(--shadow-dark);
+  }
+  /* Menu Section */
+  #menu-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 1.8rem;
+  }
+  .menu-item {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px var(--shadow-dark);
+    display: flex;
+    flex-direction: column;
+  }
+  .menu-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--warm-beige);
+  }
+  .menu-item-content {
+    padding: 1rem 1rem 1.3rem;
+    flex: 1;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .menu-item-content h3 {
+    font-family: var(--font-alt);
+    margin: 0 0 0.5rem;
+    color: var(--warm-brown);
+  }
+  .menu-item-content p {
+    margin: 0;
+    color: #5a3d26;
+    font-size: 0.95rem;
+    flex-grow: 1;
+  }
+  /* About Us Section */
+  #about-text {
+    background: white;
+    padding: 1.8rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px var(--shadow-dark);
+    font-size: 1.09rem;
+    color: var(--warm-brown);
+    line-height: 1.6;
+  }
+  /* Visit Us Section */
+  #visit-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  #visit-details {
+    flex: 1 1 320px;
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 12px var(--shadow-dark);
+    color: var(--warm-brown);
+    font-size: 1.05rem;
+  }
+  #visit-details h3 {
+    margin-top: 0; font-family: var(--font-alt); color: var(--dark-brown);
+    margin-bottom: 0.7rem;
+  }
+  #map {
+    flex: 1 1 320px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px var(--shadow-dark);
+    height: 280px;
+  }
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  /* Pre-Order Section */
+  #preorder-form {
+    background: white;
+    padding: 1.8rem 2.2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 18px var(--shadow-dark);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  #preorder-form h3 {
+    margin-top: 0; font-family: var(--font-alt);
+    margin-bottom: 1.2rem;
+    color: var(--warm-brown);
+  }
+  #preorder-form label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+    color: var(--dark-brown);
+    font-size: 0.95rem;
+  }
+  #preorder-form select,
+  #preorder-form input[type="number"],
+  #preorder-form input[type="text"],
+  #preorder-form textarea {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1.7px solid #997755;
+    border-radius: 7px;
+    font-size: 1rem;
+    margin-bottom: 1.1rem;
+    font-family: var(--font-sans);
+    color: var(--warm-brown);
+    background: #fff7ea;
+    transition: border-color 0.2s ease;
+  }
+  #preorder-form select:focus,
+  #preorder-form input[type="number"]:focus,
+  #preorder-form input[type="text"]:focus,
+  #preorder-form textarea:focus {
+    border-color: var(--accent-red);
+    outline: none;
+  }
+  #preorder-form button {
+    background: var(--accent-gold);
+    border: none;
+    color: var(--warm-brown);
+    font-weight: 700;
+    padding: 0.8rem 2rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    box-shadow: 0 6px 12px rgba(217,162,78,0.6);
+    transition: background 0.3s ease;
+  }
+  #preorder-form button:hover,
+  #preorder-form button:focus {
+    background: #b37e31;
+    outline-offset: 3px;
+  }
+  #preorder-status {
+    margin-top: 0.8rem;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--accent-red);
+  }
+  /* Testimonials */
+  #testimonials {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .testimonial {
+    background: white;
+    border-radius: 15px;
+    padding: 1.3rem 1.8rem;
+    box-shadow: 0 5px 14px var(--shadow-dark);
+    color: var(--warm-brown);
+    font-size: 1rem;
+    line-height: 1.5;
+    display: none;
+    user-select: none;
+  }
+  .testimonial.active {
+    display: block;
+    animation: fadeInUp 0.6s ease forwards;
+  }
+  .testimonial .client {
+    margin-top: 0.95rem;
+    font-weight: 600;
+    font-family: var(--font-alt);
+    text-align: right;
+    color: var(--dark-brown);
+    font-size: 0.9rem;
+  }
+  @keyframes fadeInUp {
+    0% {opacity: 0; transform: translateY(15px);}
+    100% {opacity: 1; transform: translateY(0);}
+  }
+  #testimonials-controls {
+    margin-top: 1rem;
+    text-align: center;
+  }
+  #testimonials-controls button {
+    background: var(--accent-red);
+    border: none;
+    color: var(--warm-beige);
+    font-weight: 700;
+    padding: 0.4rem 0.9rem;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 0 0.4rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(217,78,63,0.5);
+    transition: background 0.3s ease;
+  }
+  #testimonials-controls button:hover,
+  #testimonials-controls button:focus {
+    background: #b93c30;
+    outline-offset: 3px;
+  }
+  /* CTA Section */
+  #cta {
+    background: var(--accent-red);
+    color: var(--warm-beige);
+    text-align: center;
+    border-radius: 15px;
+    padding: 2.2rem 1rem;
+    box-shadow: 0 8px 25px rgba(217,78,63,0.5);
+    max-width: 900px;
+    margin: 0 auto 5rem;
+  }
+  #cta h2 {
+    font-family: var(--font-alt);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  #cta button {
+    background: var(--warm-beige);
+    color: var(--accent-red);
+    padding: 0.9rem 2.2rem;
+    border: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 5px 15px rgba(247,235,225,0.8);
+  }
+  #cta button:hover,
+  #cta button:focus {
+    background: #fff;
+    outline-offset: 3px;
+  }
+  /* Registration sections */
+  #register-section {
+    max-width: 700px;
+    margin: 0 auto 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+  }
+  .reg-box {
+    background: white;
+    padding: 1.8rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 18px var(--shadow-dark);
+    flex: 1 1 320px;
+  }
+  .reg-box h3 {
+    font-family: var(--font-alt);
+    margin-top: 0;
+    color: var(--warm-brown);
+    margin-bottom: 1rem;
+  }
+  .reg-box label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--dark-brown);
+  }
+  .reg-box input[type="email"],
+  .reg-box input[type="text"] {
+    width: 100%;
+    padding: 0.45rem 0.75rem;
+    margin: 0.4rem 0 1.1rem;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    border-radius: 7px;
+    border: 1.5px solid #ad8b6d;
+    background: #fff7ea;
+    color: var(--warm-brown);
+    transition: border-color 0.2s ease;
+  }
+  .reg-box input[type="email"]:focus,
+  .reg-box input[type="text"]:focus {
+    border-color: var(--accent-red);
+    outline: none;
+  }
+  .reg-box button {
+    background: var(--accent-red);
+    color: var(--warm-beige);
+    font-weight: 700;
+    padding: 0.6rem 1.8rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 5px 14px rgba(217,78,63,0.55);
+    transition: background 0.3s ease;
+  }
+  .reg-box button:hover,
+  .reg-box button:focus {
+    background: #b93c30;
+    outline-offset: 3px;
+  }
+  .status-msg {
+    margin-top: 0.8rem;
+    font-weight: 600;
+    font-size: 1rem;
+    min-height: 20px;
+    color: var(--accent-red);
+  }
+  /* Live chat */
+  #live-chat-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--accent-gold);
+    color: var(--warm-brown);
+    border: none;
+    border-radius: 50px;
+    padding: 0.9rem 1.4rem 0.9rem 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 5px 18px rgba(217,162,78,0.7);
+    display: flex; align-items: center; gap: 0.5rem;
+    z-index: 999;
+    transition: background 0.3s ease;
+  }
+  #live-chat-btn:hover,
+  #live-chat-btn:focus {
+    background: #b37e31;
+    outline-offset: 3px;
+  }
+  #chat-window {
+    position: fixed;
+    bottom: 75px;
+    right: 20px;
+    width: 320px;
+    max-height: 420px;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    border-radius: 15px;
+    display: none;
+    flex-direction: column;
+    font-family: var(--font-sans);
+    z-index: 999;
+  }
+  #chat-header {
+    background: var(--accent-red);
+    color: var(--warm-beige);
+    padding: 1rem 1.2rem;
+    font-weight: 700;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    font-size: 0.95rem;
+    color: var(--warm-brown);
+  }
+  .chat-msg {
+    margin-bottom: 1rem;
+  }
+  .chat-msg.bot {
+    background: var(--warm-beige);
+    padding: 0.55rem 0.85rem;
+    border-radius: 8px;
+    max-width: 85%;
+  }
+  .chat-msg.user {
+    background: var(--accent-gold);
+    padding: 0.55rem 0.85rem;
+    border-radius: 8px;
+    max-width: 80%;
+    color: var(--warm-brown);
+    margin-left: auto;
+  }
+  #chat-input-container {
+    padding: 0.7rem 1rem;
+    border-top: 1px solid #d9a24e;
+    display: flex;
+    gap: 0.7rem;
+  }
+  #chat-input {
+    flex: 1;
+    font-size: 1rem;
+    border-radius: 12px;
+    border: 1.5px solid #d9a24e;
+    padding: 0.5rem 0.9rem;
+    font-family: var(--font-sans);
+    color: var(--warm-brown);
+    background: #fff7ea;
+    transition: border-color 0.25s ease;
+  }
+  #chat-input:focus {
+    border-color: var(--accent-red);
+    outline: none;
+  }
+  #chat-send-btn {
+    background: var(--accent-red);
+    border: none;
+    color: var(--warm-beige);
+    font-weight: 700;
+    padding: 0 1.2rem;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(217,78,63,0.55);
+    transition: background 0.3s ease;
+  }
+  #chat-send-btn:hover,
+  #chat-send-btn:focus {
+    background: #b93c30;
+    outline-offset: 3px;
+  }
+  /* Loader */
+  .loader {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid var(--accent-red);
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 6px;
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+  }
+  /* Responsive */
+  @media (max-width: 720px) {
+    #home {
+      flex-direction: column;
+    }
+    #home-text, #home-img {
+      flex: 1 1 100%;
+      text-align: center;
+    }
+    #home-text button {
+      width: 80vw;
+      max-width: 300px;
+    }
+    #visit-info {
+      flex-direction: column;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <nav aria-label="Primary navigation">
+    <h1>AABD Bakery</h1>
+    <ul role="list">
+      <li><a href="#home" tabindex="0">Home</a></li>
+      <li><a href="#menu" tabindex="0">Menu</a></li>
+      <li><a href="#about" tabindex="0">About Us</a></li>
+      <li><a href="#visit" tabindex="0">Visit Us</a></li>
+      <li><a href="#preorder" tabindex="0">Pre-Order</a></li>
+      <li><a href="#testimonials" tabindex="0">Testimonials</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <section id="home" aria-label="Introduction to AABD Bakery">
+    <div id="home-text">
+      <h2>Discover Artisan Delights at AABD Bakery</h2>
+      <p>Located in the heart of Singapore CBD, AABD Bakery brings you the finest artisan sourdough, pastries, and seasonal cakes handcrafted with passion and quality ingredients. For working professionals who cherish quality and flavor, our bakery offers a delicious escape to brighten your day.</p>
+    </div>
+    <div id="home-img">
+      <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?auto=format&fit=crop&w=1600&q=80" alt="Fresh artisan sourdough bread and pastries" loading="lazy" />
+    </div>
+  </section>
+
+  <section id="menu" aria-label="Menu offerings at AABD Bakery">
+    <h2 class="section-title">Our Menu</h2>
+    <div id="menu-list">
+      <article class="menu-item" tabindex="0" aria-label="Sourdough bread">
+        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1600&q=80" alt="Crusty golden artisan sourdough bread baguettes" loading="lazy" />
+        <div class="menu-item-content">
+          <h3>Handcrafted Sourdough</h3>
+          <p>Our signature sourdough is slow-fermented for a deep, tangy flavor with a crusty golden exterior and soft crumb. Perfect for sandwiches or tasting on its own.</p>
+        </div>
+      </article>
+      <article class="menu-item" tabindex="0" aria-label="Assorted artisan pastries">
+        <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=1600&q=80" alt="Assorted delicious golden pastries" loading="lazy" />
+        <div class="menu-item-content">
+          <h3>Delicious Pastries</h3>
+          <p>Freshly baked every day, our pastries boast flaky layers, buttery richness, and creative flavors like almond croissants and chocolate twists–a sweet mid-day indulgence.</p>
+        </div>
+      </article>
+      <article class="menu-item" tabindex="0" aria-label="Seasonal cakes and sweet treats">
+        <img src="https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?auto=format&fit=crop&w=1600&q=80" alt="Elegantly decorated seasonal cake" loading="lazy" />
+        <div class="menu-item-content">
+          <h3>Seasonal Cakes</h3>
+          <p>Celebrate with our limited-edition seasonal cakes, crafted with fresh ingredients and artistic flair. From fruity delights to indulgent chocolate, each cake is a masterpiece.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="about" aria-label="About AABD Bakery">
+    <h2 class="section-title">About Us</h2>
+    <div id="about-text" tabindex="0">
+      <p>Founded by passionate bakers with deep roots in artisan traditions, AABD Bakery is committed to delivering quality and authenticity in every bite. We carefully select the finest ingredients, embrace slow fermentation, and blend craftsmanship and creativity to bring you exceptional breads, pastries, and cakes.</p>
+      <p>Our values center on sustainability, supporting local farmers, and fostering community connections in Singapore’s CBD. Enjoy a unique experience that elevates your daily routine with wholesome, delicious baked goods made the right way.</p>
+    </div>
+  </section>
+
+  <section id="visit" aria-label="Visit AABD Bakery information">
+    <h2 class="section-title">Visit Us</h2>
+    <div id="visit-info">
+      <div id="visit-details">
+        <h3>Our Location</h3>
+        <address>
+          <strong>AABD Bakery</strong><br />
+          32 Market Street, #01-02<br />
+          Singapore 048941<br />
+        </address>
+        <h3>Opening Hours</h3>
+        <ul>
+          <li>Mon - Fri: 7:30 AM – 7:00 PM</li>
+          <li>Sat: 8:00 AM – 5:00 PM</li>
+          <li>Sun & Public Holidays: Closed</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="preorder" aria-label="Pre-order form for AABD Bakery">
+    <h2 class="section-title">Pre-Order Your Favorites</h2>
+    <form id="preorder-form" novalidate aria-describedby="preorder-status">
+      <h3>Pre-Order Form</h3>
+      <label for="product-select">Select Product</label>
+      <select id="product-select" name="product" required aria-required="true" aria-describedby="product-error">
+        <option value="" disabled selected>Select a product</option>
+        <option value="Sourdough Bread">Sourdough Bread</option>
+        <option value="Almond Croissant">Almond Croissant</option>
+        <option value="Chocolate Twist">Chocolate Twist</option>
+        <option value="Seasonal Cake">Seasonal Cake</option>
+      </select>
+      <span id="product-error" class="input-error" aria-live="polite"></span>
+
+      <label for="quantity-input">Quantity</label>
+      <input type="number" id="quantity-input" name="quantity" min="1" max="20" value="1" required aria-required="true" aria-describedby="quantity-error" />
+      <span id="quantity-error" class="input-error" aria-live="polite"></span>
+
+      <label for="name-input">Your Full Name</label>
+      <input type="text" id="name-input" name="name" maxlength="40" autocomplete="name" required aria-required="true" aria-describedby="name-error" />
+      <span id="name-error" class="input-error" aria-live="polite"></span>
+
+      <label for="email-input">Your Email</label>
+      <input type="email" id="email-input" name="email" maxlength="60" autocomplete="email" required aria-required="true" aria-describedby="email-error" />
+      <span id="email-error" class="input-error" aria-live="polite"></span>
+
+      <label for="notes-input">Special Notes (Optional)</label>
+      <textarea id="notes-input" name="notes" rows="3" placeholder="E.g., Allergies or pick-up instructions"></textarea>
+
+      <button type="submit" aria-live="polite">Submit Pre-Order</button>
+      <div id="preorder-status" role="alert" aria-live="assertive"></div>
+    </form>
+  </section>
+
+  <section id="testimonials" aria-label="Customer testimonials">
+    <h2 class="section-title">What Our Customers Say</h2>
+    <div class="testimonial active" tabindex="0" aria-live="polite">
+      <p>"AABD Bakery’s sourdough is hands down the best I’ve tasted in Singapore. The crust is perfectly crunchy while the crumb is soft and flavorful. The pastries are also divine – my daily treat!"</p>
+      <div class="client">– Jamie L., Marketing Executive</div>
+    </div>
+    <div class="testimonial" tabindex="0" aria-live="polite">
+      <p>"The seasonal cakes are truly a masterpiece. I ordered one for my birthday, and the freshness and delicate flavors really wowed my guests. Excellent service and location too!"</p>
+      <div class="client">– Jasmine T., Financial Analyst</div>
+    </div>
+    <div class="testimonial" tabindex="0" aria-live="polite">
+      <p>"As a busy professional in CBD, I appreciate how AABD Bakery delivers artisan quality with convenience. Their pre-order system is easy to use, and the customer care is warm and attentive."</p>
+      <div class="client">– Marcus W., Consultant</div>
+    </div>
+    <div id="testimonials-controls" role="group" aria-label="Testimonial navigation">
+      <button type="button" id="prev-testimonial" aria-label="Previous testimonial">&#8592;</button>
+      <button type="button" id="next-testimonial" aria-label="Next testimonial">&#8594;</button>
+    </div>
+  </section>
+
+  <section id="register-section" aria-label="Newsletter registration and email update">
+    <div class="reg-box" aria-labelledby="reg-title">
+      <h3 id="reg-title">Sign Up for Promotions & Updates</h3>
+      <label for="reg-name">Full Name</label>
+      <input id="reg-name" type="text" maxlength="40" autocomplete="name" required aria-required="true" aria-describedby="reg-name-error" placeholder="Your name" />
+      <span id="reg-name-error" class="input-error" aria-live="polite"></span>
+      <label for="reg-email">Email Address</label>
+      <input id="reg-email" type="email" maxlength="60" autocomplete="email" required aria-required="true" aria-describedby="reg-email-error" placeholder="you@example.com" />
+      <span id="reg-email-error" class="input-error" aria-live="polite"></span>
+      <button id="reg-submit" type="button" aria-live="polite">Register</button>
+      <div id="reg-status" class="status-msg" role="alert" aria-live="assertive"></div>
+    </div>
+    <div class="reg-box" aria-labelledby="upd-title">
+      <h3 id="upd-title">Update Your Registered Email</h3>
+      <label for="old-email">Old Email Address</label>
+      <input id="old-email" type="email" maxlength="60" autocomplete="email" aria-describedby="old-email-error" placeholder="your old email" />
+      <span id="old-email-error" class="input-error" aria-live="polite"></span>
+      <label for="new-email">New Email Address</label>
+      <input id="new-email" type="email" maxlength="60" autocomplete="email" aria-describedby="new-email-error" placeholder="your new email" />
+      <span id="new-email-error" class="input-error" aria-live="polite"></span>
+      <button id="upd-submit" type="button" aria-live="polite">Update Email</button>
+      <div id="upd-status" class="status-msg" role="alert" aria-live="assertive"></div>
+    </div>
+  </section>
+
+  <section id="cta" aria-label="Call to action">
+    <h2>Craving Artisan Goodness? Pre-Order Online or Visit Us Today!</h2>
+    <button id="cta-preorder-btn" aria-label="Navigate to pre-order section">Pre-Order Now</button>
+  </section>
+</main>
+
+<button id="live-chat-btn" aria-haspopup="dialog" aria-expanded="false" aria-controls="chat-window" aria-label="Open live chat">
+  💬 Live Chat
+</button>
+<div id="chat-window" role="dialog" aria-modal="true" aria-labelledby="chat-header" tabindex="-1">
+  <div id="chat-header">
+    <div>AABD Bakery Chat</div>
+    <button id="chat-close-btn" aria-label="Close live chat">×</button>
+  </div>
+  <div id="chat-messages" tabindex="0" aria-live="polite" aria-atomic="false"></div>
+  <div id="chat-input-container">
+    <input id="chat-input" type="text" aria-label="Type your message here" autocomplete="off" />
+    <button id="chat-send-btn" aria-label="Send message">Send</button>
+  </div>
+</div>
+<script>
+  // Scroll to Pre-Order function
+  const preorderSection = document.getElementById('preorder');
+  const preorderBtns = [document.getElementById('home-preorder-btn'), document.getElementById('cta-preorder-btn')];
+  preorderBtns.forEach(btn => {
+    if(btn) {
+      btn.addEventListener('click', e => {
+        preorderSection.scrollIntoView({behavior: 'smooth'});
+        document.getElementById('product-select').focus();
+      });
+    }
+  });
+
+  // Testimonials Carousel
+  const testimonials = [...document.querySelectorAll('#testimonials .testimonial')];
+  let testimonialIndex = 0;
+  const showTestimonial = i => {
+    testimonials.forEach(t => t.classList.remove('active'));
+    testimonials[i].classList.add('active');
+    testimonials[i].focus();
+  };
+  document.getElementById('prev-testimonial').addEventListener('click', () => {
+    testimonialIndex = (testimonialIndex - 1 + testimonials.length) % testimonials.length;
+    showTestimonial(testimonialIndex);
+  });
+  document.getElementById('next-testimonial').addEventListener('click', () => {
+    testimonialIndex = (testimonialIndex + 1) % testimonials.length;
+    showTestimonial(testimonialIndex);
+  });
+
+  // Pre-Order Form Handling and Validation
+  const preorderForm = document.getElementById('preorder-form');
+  const preorderStatus = document.getElementById('preorder-status');
+  const inputsReq = [
+    {id: 'product-select', errorId: 'product-error', validate: v => v !== null && v !== ''},
+    {id: 'quantity-input', errorId: 'quantity-error', validate: v => Number.isInteger(v) && v >= 1 && v <= 20},
+    {id: 'name-input', errorId: 'name-error', validate: v => v.trim().length >= 2},
+    {id: 'email-input', errorId: 'email-error', validate: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)}
+  ];
+
+  function setError(elemId, msg) {
+    const errSpan = document.getElementById(elemId + '-error');
+    errSpan.textContent = msg;
+  }
+
+  function clearErrors() {
+    inputsReq.forEach(({errorId}) => setError(errorId.replace('-error', ''), ''));
+  }
+
+  preorderForm.addEventListener('submit', async e => {
+    e.preventDefault();
+    clearErrors();
+    let valid = true;
+
+    const productVal = preorderForm.product.value;
+    const quantityVal = parseInt(preorderForm.quantity.value, 10);
+    const nameVal = preorderForm.name.value.trim();
+    const emailVal = preorderForm.email.value.trim();
+    const notesVal = preorderForm.notes.value.trim();
+
+    inputsReq.forEach(({id, errorId, validate}) => {
+      const val = id === 'quantity-input' ? parseInt(document.getElementById(id).value, 10) : document.getElementById(id).value;
+      if (!validate(val)) {
+        setError(errorId.replace('-error', ''), 'Please provide a valid value.');
+        valid = false;
+      }
+    });
+    if(!valid){
+      preorderStatus.textContent = "Please fix errors above and try again.";
+      return;
+    }
+
+    preorderStatus.innerHTML = 'Submitting... <span class="loader"></span>';
+    // Simulate sending pre-order data as 'name' + 'email' plus content summarized as JSON strings.
+    try {
+      const siteId = new URLSearchParams(window.location.search).get('id') || '';
+      const bodyObj = {
+        action: 'register',
+        email: emailVal,
+        name: nameVal,
+        websiteId: siteId,
+        source: window.location.href,
+        preorder: {
+          product: productVal,
+          quantity: quantityVal,
+          notes: notesVal || null
+        }
+      };
+      const res = await fetch('https://techtravelthink.app.n8n.cloud/webhook/user-register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(bodyObj)
+      });
+      const data = await res.json();
+      if(data.success) {
+        preorderStatus.textContent = 'Pre-order submitted successfully! We look forward to serving you.';
+        preorderForm.reset();
+      } else {
+        preorderStatus.textContent = data.message || 'Pre-order submission failed. Please try again.';
+      }
+    } catch(e){
+      preorderStatus.textContent = 'Network error. Please try again.';
+    }
+  });
+
+  // Registration and Email Update forms
+  const siteId = new URLSearchParams(window.location.search).get('id') || '';
+
+  async function registerUser(email, name) {
+    try {
+      const res = await fetch('https://techtravelthink.app.n8n.cloud/webhook/user-register', {
+        method: 'POST', headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ action: 'register', email, name, websiteId: siteId, source: window.location.href })
+      });
+      const data = await res.json();
+      return data.success ? 'Registered successfully!' : (data.message || 'Registration failed');
+    } catch(e) { return 'Network error. Please try again.'; }
+  }
+
+  async function updateUserEmail(oldEmail, newEmail) {
+    try {
+      const res = await fetch('https://techtravelthink.app.n8n.cloud/webhook/user-register', {
+        method: 'POST', headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ action: 'update', oldEmail, newEmail, websiteId: siteId })
+      });
+      const data = await res.json();
+      return data.success ? 'Email updated successfully!' : (data.message || 'Update failed');
+    } catch(e) { return 'Network error. Please try again.'; }
+  }
+
+  // Helpers for validation
+  function validateEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+  function validateName(name) {
+    return name.trim().length >= 2;
+  }
+
+  // Register form elements
+  const regNameInput = document.getElementById('reg-name');
+  const regEmailInput = document.getElementById('reg-email');
+  const regStatus = document.getElementById('reg-status');
+  const regSubmit = document.getElementById('reg-submit');
+
+  // Update form elements
+  const oldEmailInput = document.getElementById('old-email');
+  const newEmailInput = document.getElementById('new-email');
+  const updStatus = document.getElementById('upd-status');
+  const updSubmit = document.getElementById('upd-submit');
+
+  // Clear error span text
+  function clearRegErrors() {
+    ['reg-name-error','reg-email-error','old-email-error','new-email-error'].forEach(id => {
+      document.getElementById(id).textContent = '';
+    });
+  }
+
+  regSubmit.addEventListener('click', async () => {
+    clearRegErrors();
+    regStatus.textContent = '';
+    const name = regNameInput.value.trim();
+    const email = regEmailInput.value.trim();
+    let valid = true;
+    if(!validateName(name)) {
+      document.getElementById('reg-name-error').textContent = 'Please enter your name (min 2 letters).';
+      valid = false;
+    }
+    if(!validateEmail(email)) {
+      document.getElementById('reg-email-error').textContent = 'Please enter a valid email address.';
+      valid = false;
+    }
+    if(!valid) return;
+
+    regStatus.innerHTML = 'Registering... <span class="loader"></span>';
+    const msg = await registerUser(email, name);
+    regStatus.textContent = msg;
+    if(msg === 'Registered successfully!') {
+      regNameInput.value = '';
+      regEmailInput.value = '';
+    }
+  });
+
+  updSubmit.addEventListener('click', async () => {
+    clearRegErrors();
+    updStatus.textContent = '';
+    const oldEmail = oldEmailInput.value.trim();
+    const newEmail = newEmailInput.value.trim();
+    let valid = true;
+    if(!validateEmail(oldEmail)) {
+      document.getElementById('old-email-error').textContent = 'Enter your old registered email.';
+      valid = false;
+    }
+    if(!validateEmail(newEmail)) {
+      document.getElementById('new-email-error').textContent = 'Enter a valid new email.';
+      valid = false;
+    }
+    if(!valid) return;
+
+    updStatus.innerHTML = 'Updating... <span class="loader"></span>';
+    const msg = await updateUserEmail(oldEmail, newEmail);
+    updStatus.textContent = msg;
+    if(msg === 'Email updated successfully!') {
+      oldEmailInput.value = '';
+      newEmailInput.value = '';
+    }
+  });
+
+  // Live Chat UI
+  const chatBtn = document.getElementById('live-chat-btn');
+  const chatWindow = document.getElementById('chat-window');
+  const chatCloseBtn = document.getElementById('chat-close-btn');
+  const chatMessages = document.getElementById('chat-messages');
+  const chatInput = document.getElementById('chat-input');
+  const chatSendBtn = document.getElementById('chat-send-btn');
+
+  // Predefined bot responses
+  const botResponses = {
+    greetings: 'Hi there! How can AABD Bakery assist you today? You can ask about products, pre-orders, or visit details.',
+    hours: 'Our opening hours are Mon-Fri 7:30 AM to 7 PM, and Sat 8 AM to 5 PM. Closed on Sundays and public holidays.',
+    location: 'We are located at 32 Market Street, #01-02, Singapore 048941, easily accessible within the CBD.',
+    preorder: 'To pre-order, just fill out the form in the Pre-Order section of this page. Let me know if you need help!',
+    thanks: 'You’re welcome! Feel free to ask if you have more questions or place your order anytime.',
+    default: 'I’m here to help! Could you please rephrase your question or ask about our menu, store hours, or pre-orders?'
+  };
+
+  function appendMessage(message, sender='bot') {
+    const div = document.createElement('div');
+    div.className = `chat-msg ${sender}`;
+    div.textContent = message;
+    chatMessages.appendChild(div);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+  function botReply(text) {
+    setTimeout(() => appendMessage(text, 'bot'), 650);
+  }
+  chatBtn.addEventListener('click', () => {
+    const expanded = chatBtn.getAttribute('aria-expanded') === 'true';
+    if(expanded) return;
+    chatBtn.setAttribute('aria-expanded', 'true');
+    chatWindow.style.display = 'flex';
+    chatWindow.focus();
+    if(chatMessages.children.length === 0) {
+      appendMessage(botResponses.greetings, 'bot');
+    }
+  });
+  chatCloseBtn.addEventListener('click', () => {
+    chatBtn.setAttribute('aria-expanded', 'false');
+    chatWindow.style.display = 'none';
+    chatBtn.focus();
+  });
+  function interpretMessage(msg) {
+    const m = msg.toLowerCase().trim();
+    if(m.includes('hour') || m.includes('open')) return botResponses.hours;
+    if(m.includes('location') || m.includes('where') || m.includes('address')) return botResponses.location;
+    if(m.includes('preorder') || m.includes('order') || m.includes('buy')) return botResponses.preorder;
+    if(m.includes('thanks') || m.includes('thank you') || m.includes('thx')) return botResponses.thanks;
+    if(m === '') return '';
+    return botResponses.default;
+  }
+  function sendChatMessage() {
+    const userMsg = chatInput.value.trim();
+    if(!userMsg) return;
+    appendMessage(userMsg, 'user');
+    chatInput.value = '';
+    const reply = interpretMessage(userMsg);
+    if(reply) botReply(reply);
+  }
+  chatSendBtn.addEventListener('click', sendChatMessage);
+  chatInput.addEventListener('keydown', e => {
+    if(e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      sendChatMessage();
+    }
+  });
+
+  // Accessibility: trap focus inside chat when opened
+  chatWindow.addEventListener('keydown', e => {
+    if(e.key === 'Tab') {
+      const focusableElems = chatWindow.querySelectorAll('button, input, textarea');
+      const focusArray = Array.prototype.slice.call(focusableElems);
+      if(focusArray.length === 0) return;
+      const first = focusArray[0];
+      const last = focusArray[focusArray.length - 1];
+      if(e.shiftKey) {
+        if(document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else {
+        if(document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    }
+    if(e.key === 'Escape') {
+      chatCloseBtn.click();
+    }
+  });
+</script>
+</body>
+</html>
